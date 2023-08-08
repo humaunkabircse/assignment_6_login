@@ -6,7 +6,7 @@
       <div class="w-1/2" style="background-image: url(https://images.unsplash.com/photo-1690555575753-7aa27df96b52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80); background-repeat: no-repeat; background-size: cover;">
       </div>
       <div class="w-1/2 flex flex-col justify-center items-center bg-gray-200">
-        <h2 class="mb-5 text-xl text-black-600">Welcome to Login</h2>
+        <h2 class="mb-5 text-xl text-black-600">Welcome to Dashboard</h2>
       </div>
     </section>
 </template>
