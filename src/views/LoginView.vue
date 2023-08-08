@@ -11,10 +11,11 @@ function signIn(){
   Object.assign(user, JSON.parse(localStorage.getItem('user')))
 
   if(user.username === data.username && user.password === data.password){
-    router.push('/welcome')
-  }else
+    router.push('/home')
+  }
+  else
   {
-    message.value = 'Login Failed'
+    message.value = 'Username or Password Does not match'
   }
 
 }
@@ -27,8 +28,7 @@ function signIn(){
         <h1 class="mb-5 text-2xl mt-10 ml-10 text-white">Login Page</h1>
       </div>
       <div class="w-1/2 flex flex-col justify-center items-center bg-gray-200">
-        <h2 class="mb-5 text-xl text-sky-600">Login or register</h2>
-        <h4 class="text-gray-700">{{ data }}</h4>
+        <h2 class="mb-5 text-xl text-black-600">Login or register</h2>
         
         <div class="w-full max-w-xs">
           <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
