@@ -1,13 +1,21 @@
 <script setup>
 import {RouterLink} from 'vue-router'
-import {reactive} from 'vue'
+import {ref, reactive} from 'vue'
+import router from '../router';
 
 const userData = reactive({});
+let message = ref('')
 
 // Register User function 
 function register() {
-    localStorage.setItem('user', JSON.stringify(userData))
-    alert('Register Success')
+    if(!userData.username || !userData.password){
+        message.value = 'Please fill all fields'
+    }else{
+        localStorage.setItem('user', JSON.stringify(userData))
+        router.push('/')
+    }
+    
+    
 }
 
 </script>
@@ -29,6 +37,7 @@ function register() {
             <div class="mb-4">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Email</label>
               <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" v-model="userData.username" type="email" placeholder="@example.com">
+              <p class="text-red-500 text-xs italic">{{ message }}</p>
             </div>
             <div class="mb-6">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
